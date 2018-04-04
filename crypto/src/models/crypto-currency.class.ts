@@ -19,7 +19,6 @@ export class CryptoCurrency {
       ...data
     };
 
-    
    //connecting backend data to the our frontend crypto-currency.class
     this.id = defaults.id;
     this.name = defaults.name;

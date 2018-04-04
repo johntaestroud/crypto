@@ -12,13 +12,13 @@ export class CryptoCurrency {
   public percent_change_1h: number;
   public percent_change_24h: number;
   public percent_change_7d: number;
-  public last_updated: number;
+  public last_updated: Date;
 
   constructor(date?: any) {
     const defaults: any = {
       ...data
     };
-
+   //connecting backend data to the our frontend crypto-currency.class
     this.id = defaults.id;
     this.name = defaults.name;
     this.symbol = defaults.symbol;

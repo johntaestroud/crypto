@@ -3,7 +3,7 @@ export class BitcoinMarket {
   public active_cryptocurrencies: number;
   public total_volume_usd: number;
   public active_markets: number;
-  public total_market_cap_by_available_supply_usd: number;
+  public total_market_cap_usd: number;
 
   constructor(data?: any) {
     const defaults = {
@@ -12,10 +12,10 @@ export class BitcoinMarket {
       
     };
 
-    this.active_cryptocurrencies = defaults.active_cryptocurrencies;
+    this.active_currencies = defaults.active_currencies;
     this.active_markets = defaults.active_markets;
-    this.total_volume_usd = defaults.total_volume_usd;
-    this.total_market_cap_by_available_supply_usd = defaults.total_market_cap_by_available_supply_usd;
+    this.total_24h_volume_usd = defaults.total_24h_volume_usd;
+    this.total_market_cap_usd = defaults.total_market_cap_usd;
     this.bitcoin_percentage_of_market_cap = defaults.bitcoin_percentage_of_market_cap;
   }
 }

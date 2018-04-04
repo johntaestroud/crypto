@@ -14,10 +14,12 @@ export class CryptoCurrency {
   public percent_change_7d: number;
   public last_updated: Date;
 
-  constructor(date?: any) {
+  constructor(data?: any) {
     const defaults: any = {
       ...data
     };
+
+    
    //connecting backend data to the our frontend crypto-currency.class
     this.id = defaults.id;
     this.name = defaults.name;

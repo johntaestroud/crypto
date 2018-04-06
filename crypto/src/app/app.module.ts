@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
+import { ChartModule } from 'angular2-chartjs';
+
 import { AppComponent } from './app.component';
 import { BitcoinStatsComponent } from '../bitcoin-stats/bitcoin-stats.component';
 import { CryptoService } from '../services/crypto.service';
@@ -24,6 +26,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    ChartModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes) //passing our routes to our RouterModule so we can use it with our router outlet
   ],

@@ -4,13 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
+import { BitcoinStatsComponent } from './bitcoin-stats/bitcoin-stats.component';
 import { CryptoService } from '../services/crypto.service';
 import { CryptoTableComponent } from '../crypto-table/crypto-table.component';
-import { NotFoundComponent } from '..//not-found/not-found.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 const appRoutes: Routes = [
   { path: '', component: CryptoTableComponent},
-  //{ path: 'bitcoinStats', component: BitcoinStatsComponent },
+  { path: 'bitcoinStats', component: BitcoinStatsComponent },
   { path: '**', component: NotFoundComponent } //check it in order so this needs to be the last path
 ];
 
@@ -18,7 +19,8 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CryptoTableComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    BitcoinStatsComponent
   ],
   imports: [
     BrowserModule,

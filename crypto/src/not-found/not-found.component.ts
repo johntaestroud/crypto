@@ -1,4 +1,3 @@
-import { NotFoundComponent } from '..';
 import { Component } from '@angular/core';
 
 @Component({

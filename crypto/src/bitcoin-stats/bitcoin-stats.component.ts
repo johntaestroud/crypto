@@ -11,12 +11,26 @@ import { BitcoinPrice } from '../models/bitcoin-price.class';
 export class BitcoinStatsComponent {
   public bitcoinStats: BitcoinPrice = new BitcoinPrice();
   public prices: number[];
+  public dates: string[];
 
   constructor(public cryptoService: CryptoService) {
     this.cryptoService.getBitCoinPriceStats().subscribe((data: any) => {
       this.bitcoinStats = new BitcoinPrice(data);
       this.prices = this.convertPrices();
+      this.dates = this.convertDates();
+      console.log(this.dates);
     });
+  }
+
+  public convertDates(): string[] {
+    const dates = this.bitcoinStats.values.map((coordinates: PriceCoordinates) => {
+      const rawDate = new Date(coordinates.x * 1000);
+
+      return `${rawDate.getMonth()}/${rawDate.getDay()}/${rawDate.getFullYear()}`;
+
+    });
+
+    return dates;
   }
 
   public convertPrices(): number[] {

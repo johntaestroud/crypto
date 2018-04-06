@@ -11,7 +11,7 @@ import { Component } from '@angular/core';
 export class CryptoTableComponent {
 
   public top100Cryptos: CryptoCurrency[]; //assign it (CryptoCurrency) as a type
-  public sortValues: any = { rank: false, marketCap: false, volume: false, change24: false, price: false };//keeping track of what our values are in the header (descending/ascending)
+  public sortValues: any = { rank: false, marketCap: false, volume: false, change24: false, price: false, name: false };//keeping track of what our values are in the header (descending/ascending)
 
   constructor(public cryptoService: CryptoService) {
     this.getTop100Cryptos();
@@ -25,6 +25,34 @@ export class CryptoTableComponent {
     });
   }
 
+  public sortString(sortValue: boolean, key: string): void {
+    if (sortValue) {
+        this.top100Cryptos = this.top100Cryptos.sort((a,b) => {
+            const nameA = a.name.toUpperCase();
+            const nameB = b.name.toUpperCase();
+
+            if (nameA < nameB) {
+              return -1;
+            } else if (nameA > nameB) {
+              return 1;
+            }
+            return 0;
+        });
+    } else {
+        this.top100Cryptos = this.top100Cryptos.sort((a,b) => {
+          const nameA = a.name.toUpperCase();
+          const nameB = b.name.toUpperCase();
+    
+          if (nameA > nameB) {
+            return -1;
+          } else if (nameA < nameB) {
+            return 1;
+          }
+          return 0;
+    });
+    }
+  }
+ 
   public sortNumeric(sortValue: boolean, key: string) { // using a key because we want this to be dynamic enough that we can sort by any of the numeric values
     if(sortValue) {
       this.top100Cryptos = this.top100Cryptos.sort((a: CryptoCurrency, b: CryptoCurrency) => {

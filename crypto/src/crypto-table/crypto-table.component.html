@@ -2,7 +2,7 @@
   <thead class="borderWhiteAll">
     <tr>
       <th class="borderWhiteAll clickHand" (click)="sortNumeric(sortValues.rank, 'rank'); sortValues.rank = !sortValues.rank">#</th>
-      <th class="borderWhiteAll clickHand">Name</th>
+      <th class="borderWhiteAll clickHand" (click)="sortString(sortValues.name);  sortValues.name = !sortValues.name">Name</th>
       <th class="borderWhiteAll clickHand" (click)="sortNumeric(sortValues.marketCap, 'market_cap_usd'); sortValues.marketCap = !sortValues.marketCap">Market Cap (USD)</th>
       <th class="borderWhiteAll clickHand" (click)="sortNumeric(sortValues.price, 'price_usd'); sortValues.price = !sortValues.price">Price (USD)</th>
       <th class="borderWhiteAll clickHand" (click)="sortNumeric(sortValues.volume, 'available_supply'); sortValues.volume = !sortValues.volume">Volume (24h)</th>

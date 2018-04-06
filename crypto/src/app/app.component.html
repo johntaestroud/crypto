@@ -1,13 +1,13 @@
-<div class="container text-center">
-  <h1 class="text-white">
-    100 Cryptos | Bitcoin Price Chart
-  </h1>
+<div class="container text-center"> 
+  <h2 class="text-white">
+    Top 100 Cryptocurrencies
+  </h2>
   <hr class="bg-white">
-  <h4 class="text-white">Market Cap: 
-                  <span class="btcBlue font-weight-bold" [innerHTML]="bitcoinMarketCap.total_market_cap_usd | currency"></span> | 24h Vol. 
-                  <span class="btcBlue font-weight-bold" [innerHTML]="bitcoinMarketCap.total_24h_volume_usd"></span> | BTC Domimance: 
-                  <span class="btcBlue font-weight-bold" [innerHTML]="bitcoinMarketCap.bitcoin_percentage_of_market_cap | percent: '1.1-2'"></span></h4>
-                  <hr class="text-white">
-                  <crypto-table></crypto-table> 
+  <h6 class="text-white">Market Cap: 
+                  <span class="btcBlue font-weight-light" [innerHTML]="bitcoinMarketCap.total_market_cap_usd | currency"></span> | 24h Vol. 
+                  <span class="btcBlue font-weight-light" [innerHTML]="bitcoinMarketCap.total_24h_volume_usd"></span> | BTC Domimance: 
+                  <span class="btcBlue font-weight-light" [innerHTML]="bitcoinMarketCap.bitcoin_percentage_of_market_cap | percent: '1.1-2'"></span></h6>
+                  <hr class="bg-white">
+                  <router-outlet></router-outlet> 
                 </div>
 

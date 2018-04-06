@@ -24,15 +24,34 @@ export class BitcoinStatsComponent {
       
       this.type = 'line';
       this.chartData = {
-        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        labels: [...this.dates],
         datasets: [
           {
-            label: "My First dataset",
-            data: [65, 59, 80, 81, 56, 55, 40]
+            label: `Bitcoin (${this.bitcoinStats.unit})`,
+            data: [...this.prices],
+            backgroundColor: 'rgba(0,0,0, .5)',
+            borderColor: '#ccc'
           }
         ]
       };
       this.options = {
+        legend: {
+          labels: {
+            fontColor: 'white'
+          }
+        },
+        scales: {
+          xAxes: [{
+            gridLines: {
+              color: "rgba(255, 255, 255, 0.3)"
+            }
+          }],
+          yAxes: [{
+            gridLines: {
+              color: "rgba(255, 255, 255, 0.3)"
+            },
+          }]
+        },
         responsive: true,
         maintainAspectRatio: false
       };

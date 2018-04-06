@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { BitcoinStatsComponent } from './bitcoin-stats/bitcoin-stats.component';
+import { BitcoinStatsComponent } from '../bitcoin-stats/bitcoin-stats.component';
 import { CryptoService } from '../services/crypto.service';
 import { CryptoTableComponent } from '../crypto-table/crypto-table.component';
 import { NotFoundComponent } from '../not-found/not-found.component';

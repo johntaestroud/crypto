@@ -4,7 +4,7 @@ export class BitcoinPrice {
   public status: string;
   public name: string;
   public unit: string;
-  public period: string;
+  public period: string ;
   public description: string;
   public values: PriceCoordinates[]; 
 
@@ -12,7 +12,7 @@ export class BitcoinPrice {
     const defaults = {
       values: [],
       ...data
-    }
+    };
 
     //if a new value comes in, it is going to overwrite the value and then set it
     this.description = defaults.description;

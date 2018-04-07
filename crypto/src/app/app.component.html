@@ -1,12 +1,13 @@
 <div class="container text-center"> 
-  <h2 class="text-white">
+  <br>
+  <h4 class="text-white">
       <a [routerLink]="['']" class="text-white"> Top 100 Cryptocurrencies</a> | <a [routerLink]="['/bitcoinStats']" class="text-white">Bitcoin Chart</a>
-  </h2>                                                        
+  </h4>                                                        
   <hr class="bg-white">
   <h6 class="text-white">Market Cap: 
-                  <span class="btcBlue font-weight-light" [innerHTML]="bitcoinMarketCap.total_market_cap_usd | currency"></span> | 24h Vol. 
-                  <span class="btcBlue font-weight-light" [innerHTML]="bitcoinMarketCap.total_24h_volume_usd"></span> | BTC Domimance: 
-                  <span class="btcBlue font-weight-light" [innerHTML]="bitcoinMarketCap.bitcoin_percentage_of_market_cap | percent: '1.1-2'"></span></h6>
+                  <span class="btcGrey font-weight-light" [innerHTML]="bitcoinMarketCap.total_market_cap_usd | currency"></span> | 24h Vol. 
+                  <span class="btcGrey font-weight-light" [innerHTML]="bitcoinMarketCap.total_24h_volume_usd"></span> | BTC Domimance: 
+                  <span class="btcGrey font-weight-light" [innerHTML]="bitcoinMarketCap.bitcoin_percentage_of_market_cap | percent: '1.1-2'"></span></h6>
                   <hr class="bg-white">
                   <router-outlet></router-outlet> 
                 </div>

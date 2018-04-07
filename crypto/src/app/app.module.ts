@@ -1,3 +1,5 @@
+import { CryptoFilterComponent } from './../crypto-filter/crypto-filter.component';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,6 +13,7 @@ import { CryptoService } from '../services/crypto.service';
 import { CryptoTableComponent } from '../crypto-table/crypto-table.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
 
+
 const appRoutes: Routes = [
   { path: '', component: CryptoTableComponent},
   { path: 'bitcoinStats', component: BitcoinStatsComponent },
@@ -21,6 +24,7 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     CryptoTableComponent,
+    CryptoFilterComponent,
     NotFoundComponent,
     BitcoinStatsComponent
   ],

@@ -3,3 +3,11 @@
 .btcGrey {
   color: #ccc;
 }
+
+.borderWhite {
+  border: solid 1px #fff !important;
+}
+
+.borderWhiteBottom {
+  border-bottom: solid 1px #fff !important;
+}

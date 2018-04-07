@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 import { ChartModule } from 'angular2-chartjs';
 
@@ -30,6 +31,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule, //access to ngmodel
     ChartModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes) //passing our routes to our RouterModule so we can use it with our router outlet

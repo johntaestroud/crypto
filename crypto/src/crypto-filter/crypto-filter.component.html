@@ -1,1 +1,37 @@
-<h1>Test</h1>
+<div class="card text-white bg-dark mb-3 borderWhite">
+  <div class="card-header borderWhiteBottom">
+    <h3>Filter</h3>
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-4">
+        <label for="growth" class="font-weight-bold">Growth</label>
+        <select id="growth" class="form-control" [(ngModel)]="percentChange" (ngModelChange)="percentChangeFilter()">
+          <option value="All">All</option>
+          <option value="Positive">Positive</option>
+          <option value="Negative">Negative</option>
+          
+        </select>
+      </div>
+      <div class="col-md-4">
+          <label for="limit" class="font-weight-bold">Show only</label>
+          <select id="limit" class="form-control">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+            
+            
+          </select>
+      </div>
+      <div class="col-md-4">
+         <label for="priceunit" class="font-weight-bold">Price Unit</label>
+         <select id="priceunit" class="form-control">
+           <option value="USD">USD</option>
+           <option value="BTC">BTC</option>
+           
+         </select>
+      </div>      
+    </div>
+  </div>
+</div>

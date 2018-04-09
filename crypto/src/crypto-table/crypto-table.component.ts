@@ -11,7 +11,9 @@ import { Component } from '@angular/core';
 export class CryptoTableComponent {
 
   public top100Cryptos: CryptoCurrency[]; //assign it (CryptoCurrency) as a type
+  public filteredCryptos: CryptoCurrency[];
   public sortValues: any = { rank: false, marketCap: false, volume: false, change24: false, price: false, name: false };//keeping track of what our values are in the header (descending/ascending)
+  public priceUnit: string = 'USD';
 
   constructor(public cryptoService: CryptoService) {
     this.getTop100Cryptos();
@@ -22,9 +24,18 @@ export class CryptoTableComponent {
       this.top100Cryptos = data.map((element: any) => {
         return new CryptoCurrency(element);
       });
+      this.filteredCryptos = this.top100Cryptos;
     });
   }
 
+  public listenFilterCryptos(e: CryptoCurrency[]) {
+    this.filteredCryptos = e;
+  }
+
+  public listenPriceUnit(e: string) {
+    this.priceUnit = e;
+   console.log(this.priceUnit);
+  }
   public sortString(sortValue: boolean, key: string): void {
     if (sortValue) {
         this.top100Cryptos = this.top100Cryptos.sort((a,b) => {
